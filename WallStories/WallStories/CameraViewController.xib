@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CameraViewController" customModule="WallStories" customModuleProvider="target">
+            <connections>
+                <outlet property="cameraView" destination="C2f-jr-Mb3" id="Md1-fc-hzc"/>
+                <outlet property="photoImageView" destination="Vhi-Cu-aCp" id="Xkx-MM-tRl"/>
+                <outlet property="sourceCameraButton" destination="J8H-r6-Q5j" id="Yu5-4M-dAg"/>
+                <outlet property="takeButton" destination="EX0-1J-QvA" id="6Uy-z9-Txp"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="C2f-jr-Mb3">
+                    <rect key="frame" x="0.0" y="44" width="414" height="668"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J8H-r6-Q5j">
+                    <rect key="frame" x="344" y="64" width="50" height="50"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="NXc-zS-YBM"/>
+                        <constraint firstAttribute="width" constant="50" id="rV1-H3-rZ5"/>
+                    </constraints>
+                    <state key="normal" title="Button" backgroundImage="reverse"/>
+                    <connections>
+                        <action selector="changeCamera:" destination="-1" eventType="touchUpInside" id="TRe-IK-0Bx"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EX0-1J-QvA">
+                    <rect key="frame" x="112.5" y="712" width="189" height="150"/>
+                    <state key="normal" image="icons8-heart-outline-96">
+                        <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="medium"/>
+                    </state>
+                    <connections>
+                        <action selector="didTakePhoto:" destination="-1" eventType="touchUpInside" id="wca-Ju-3dC"/>
+                    </connections>
+                </button>
+                <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Vhi-Cu-aCp">
+                    <rect key="frame" x="301.5" y="712" width="112.5" height="150"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="Vhi-Cu-aCp" secondAttribute="height" multiplier="3:4" id="y2V-ga-kdR"/>
+                    </constraints>
+                </imageView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="C2f-jr-Mb3" secondAttribute="bottom" constant="150" id="82U-IP-wrs"/>
+                <constraint firstAttribute="trailing" secondItem="C2f-jr-Mb3" secondAttribute="trailing" id="Ek8-96-yA9"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="J8H-r6-Q5j" secondAttribute="trailing" constant="20" id="Koe-BX-QEw"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="EX0-1J-QvA" secondAttribute="bottom" id="McN-8i-9uL"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Vhi-Cu-aCp" secondAttribute="trailing" id="VRW-Fr-MHf"/>
+                <constraint firstItem="C2f-jr-Mb3" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="YGA-aF-MVR"/>
+                <constraint firstItem="C2f-jr-Mb3" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="YyU-sm-WvU"/>
+                <constraint firstItem="EX0-1J-QvA" firstAttribute="top" secondItem="C2f-jr-Mb3" secondAttribute="bottom" id="byN-vL-ikG"/>
+                <constraint firstItem="EX0-1J-QvA" firstAttribute="centerX" secondItem="C2f-jr-Mb3" secondAttribute="centerX" id="etI-Gl-c14"/>
+                <constraint firstItem="Vhi-Cu-aCp" firstAttribute="leading" secondItem="EX0-1J-QvA" secondAttribute="trailing" id="j8x-MI-yW2"/>
+                <constraint firstItem="Vhi-Cu-aCp" firstAttribute="top" secondItem="C2f-jr-Mb3" secondAttribute="bottom" id="lpS-QS-uX5"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="Vhi-Cu-aCp" secondAttribute="bottom" id="nMk-on-Oim"/>
+                <constraint firstItem="J8H-r6-Q5j" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="20" id="zgz-Fa-lTe"/>
+            </constraints>
+            <point key="canvasLocation" x="53.623188405797109" y="73.660714285714278"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="icons8-heart-outline-96" width="32" height="32"/>
+        <image name="reverse" width="170.66667175292969" height="170.66667175292969"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
