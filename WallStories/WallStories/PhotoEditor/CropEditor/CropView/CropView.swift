@@ -17,8 +17,8 @@ class CropView : UIView {
     init(frame: CGRect, image: UIImage) {
         translucencyView = TranslucencyView(effect: UIBlurEffect(style: .extraLight))
         scrollView = ImageScrollView(frame: frame, image: image)
-        forcegroundView = ForegroundView(frame: CGRect(), image: image)
-        cropBoxView = CropBoxView(frame: CGRect())
+        forcegroundView = ForegroundView(frame: .zero, image: image)
+        cropBoxView = CropBoxView(frame: .zero, image: image)
         super.init(frame: frame)
         scrollView.delegate = self
         addSubview(scrollView)
@@ -78,8 +78,8 @@ class CropView : UIView {
         forcegroundView.imageView.frame = scrollView.convert(scrollView.imageView.frame, to: forcegroundView)
     }
 
-    @objc private func testMove() {
-        translucencyView.isHidden = !translucencyView.isHidden
+    private func matchForegroundToBackground1() {
+        cropBoxView.imageView.frame = scrollView.convert(scrollView.imageView.frame, to: cropBoxView)
     }
 
 //    public func getCroppedThumbImage() -> UIImage {
@@ -109,9 +109,11 @@ extension CropView: UIScrollViewDelegate {
     }
 
     func scrollViewDidEndZooming(_ scrollView: UIScrollView, with view: UIView?, atScale scale: CGFloat) {
-        forcegroundView.isHidden = false
-        matchForegroundToBackground()
+//        forcegroundView.isHidden = false
+
+        matchForegroundToBackground1()
         translucencyView.scheduleShowing()
+        print("size", self.scrollView.getImageScaleSize())
     }
 
     func viewForZooming(in scrollView: UIScrollView) -> UIView? {

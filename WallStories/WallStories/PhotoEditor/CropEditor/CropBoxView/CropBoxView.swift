@@ -10,13 +10,32 @@ import UIKit
 
 class CropBoxView: UIView {
 
+    var imageView: UIImageView = UIImageView()
+
+    override var frame: CGRect {
+        didSet {
+            imageView.bounds = bounds
+        }
+    }
+
     override init(frame: CGRect) {
         super.init(frame: frame)
+        configImageView()
         setup()
+    }
+
+    convenience init(frame: CGRect, image: UIImage) {
+        self.init(frame: frame)
+        imageView.image = image
     }
 
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+
+    private func configImageView() {
+        imageView.bounds = bounds
+        addSubview(imageView)
     }
 
     private func setup() {
@@ -24,5 +43,7 @@ class CropBoxView: UIView {
         layer.borderColor = UIColor.black.cgColor
         backgroundColor = .clear
         isUserInteractionEnabled = false
+        clipsToBounds = true
+        layer.masksToBounds = true
     }
 }
