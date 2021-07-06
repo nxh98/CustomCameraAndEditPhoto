@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-final class BoxRatio: UIView {
+final class BoxRatioView: UIView {
 
     override init(frame: CGRect) {
         super.init(frame: frame)

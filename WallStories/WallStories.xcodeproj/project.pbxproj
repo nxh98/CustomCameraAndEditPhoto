@@ -11,6 +11,7 @@
 		F3396909266F8F250090097A /* CropStyleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F3396907266F8F250090097A /* CropStyleCell.xib */; };
 		F339690C266F8F5A0090097A /* CropStyleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F339690B266F8F5A0090097A /* CropStyleViewModel.swift */; };
 		F3396911266FA19E0090097A /* CropStyleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3396910266FA19E0090097A /* CropStyleModel.swift */; };
+		F3775B70269446C400BA5A9A /* BoxRatioView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3775B6F269446C400BA5A9A /* BoxRatioView.swift */; };
 		F37B595D2669F41600F97B3D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37B595C2669F41600F97B3D /* AppDelegate.swift */; };
 		F37B59662669F41800F97B3D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F37B59652669F41800F97B3D /* Assets.xcassets */; };
 		F37B59692669F41800F97B3D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F37B59672669F41800F97B3D /* LaunchScreen.storyboard */; };
@@ -36,6 +37,7 @@
 		F3396907266F8F250090097A /* CropStyleCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CropStyleCell.xib; sourceTree = "<group>"; };
 		F339690B266F8F5A0090097A /* CropStyleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CropStyleViewModel.swift; sourceTree = "<group>"; };
 		F3396910266FA19E0090097A /* CropStyleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CropStyleModel.swift; sourceTree = "<group>"; };
+		F3775B6F269446C400BA5A9A /* BoxRatioView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoxRatioView.swift; sourceTree = "<group>"; };
 		F37B59592669F41600F97B3D /* WallStories.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WallStories.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F37B595C2669F41600F97B3D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F37B59652669F41800F97B3D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -85,6 +87,14 @@
 				F3396910266FA19E0090097A /* CropStyleModel.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		F3775B6E2694466E00BA5A9A /* BoxRatio */ = {
+			isa = PBXGroup;
+			children = (
+				F3775B6F269446C400BA5A9A /* BoxRatioView.swift */,
+			);
+			path = BoxRatio;
 			sourceTree = "<group>";
 		};
 		F37B59502669F41600F97B3D = {
@@ -170,6 +180,7 @@
 		F3A4343126706F2E006C5062 /* CropEditor */ = {
 			isa = PBXGroup;
 			children = (
+				F3775B6E2694466E00BA5A9A /* BoxRatio */,
 				F3916FD726720DFC00250685 /* CropView */,
 				F3916FC52671BC0500250685 /* ContentScrollView */,
 				F3916FDC26720EBC00250685 /* TranslucencyView */,
@@ -293,6 +304,7 @@
 				F3916FC82671BC3700250685 /* ImageScrollView.swift in Sources */,
 				F37B595D2669F41600F97B3D /* AppDelegate.swift in Sources */,
 				F3916F952670CF7000250685 /* TranslucencyView.swift in Sources */,
+				F3775B70269446C400BA5A9A /* BoxRatioView.swift in Sources */,
 				F3A4343726707566006C5062 /* CropView.swift in Sources */,
 				F3916F9D2670D4EE00250685 /* UIImageExt.swift in Sources */,
 				F3916FCE2671BD5F00250685 /* ImageScrollViewModel.swift in Sources */,

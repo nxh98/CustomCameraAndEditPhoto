@@ -39,8 +39,6 @@ class CropBoxView: UIView {
     }
 
     private func setup() {
-        layer.borderWidth = 2
-        layer.borderColor = UIColor.black.cgColor
         backgroundColor = .clear
         isUserInteractionEnabled = false
         clipsToBounds = true

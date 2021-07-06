@@ -11,25 +11,27 @@ import UIKit
 class CropView : UIView {
     public var scrollView: ImageScrollView
     private let cropBoxView: CropBoxView
-    public let forcegroundView: ForegroundView
+//    public let forcegroundView: ForegroundView
     private let translucencyView: TranslucencyView
+    private let boxRatioView: BoxRatioView = BoxRatioView(frame: .zero)
 
     init(frame: CGRect, image: UIImage) {
         translucencyView = TranslucencyView(effect: UIBlurEffect(style: .extraLight))
         scrollView = ImageScrollView(frame: frame, image: image)
-        forcegroundView = ForegroundView(frame: .zero, image: image)
+//        forcegroundView = ForegroundView(frame: .zero, image: image)
         cropBoxView = CropBoxView(frame: .zero, image: image)
         super.init(frame: frame)
         scrollView.delegate = self
         addSubview(scrollView)
         layoutScrollView()
         addSubview(translucencyView)
-        addSubview(forcegroundView)
+//        addSubview(forcegroundView)
         handleScrollViewTouches()
         layoutTranslucencyView()
         self.backgroundColor = .white
         getFrameForForceground()
         addSubview(cropBoxView)
+        addSubview(boxRatioView)
     }
 
     required init?(coder aDecoder: NSCoder) {
@@ -69,14 +71,16 @@ class CropView : UIView {
 
     private func getFrameForForceground() {
         let size = scrollView.getImageScaleSize()
-        forcegroundView.center = self.center
-        forcegroundView.bounds.size = size
-        cropBoxView.frame = forcegroundView.frame
+        cropBoxView.center = self.center
+        let ratio = size.width / size.height
+        cropBoxView.bounds.size.width = size.width - 4
+        cropBoxView.bounds.size.height = cropBoxView.bounds.size.width / ratio
+        boxRatioView.frame = cropBoxView.frame
     }
 
-    private func matchForegroundToBackground() {
-        forcegroundView.imageView.frame = scrollView.convert(scrollView.imageView.frame, to: forcegroundView)
-    }
+//    private func matchForegroundToBackground() {
+//        cropBoxView.imageView.frame = scrollView.convert(scrollView.imageView.frame, to: cropBoxView)
+//    }
 
     private func matchForegroundToBackground1() {
         cropBoxView.imageView.frame = scrollView.convert(scrollView.imageView.frame, to: cropBoxView)
@@ -114,10 +118,12 @@ extension CropView: UIScrollViewDelegate {
         matchForegroundToBackground1()
         translucencyView.scheduleShowing()
         print("size", self.scrollView.getImageScaleSize())
+        cropBoxView.isHidden = false
     }
 
     func viewForZooming(in scrollView: UIScrollView) -> UIView? {
-        forcegroundView.isHidden = true
+//        forcegroundView.isHidden = true
+        cropBoxView.isHidden = true
         return self.scrollView.imageView
     }
 }
